@@ -1,0 +1,194 @@
+@font-face {
+    font-family: bebas;
+    src: url('../fonts/bebas.ttf');
+}
+
+@font-face {
+    font-family: quantify;
+    src: url('../fonts/quantify.ttf');
+}
+
+@font-face {
+    font-family: code;
+    src: url('../fonts/code_bold.otf');
+}
+
+@font-face {
+    font-family: gravity_book;
+    src: url('../fonts/gravity-Book.otf');
+}
+@font-face {
+    font-family: gravity_light;
+    src: url('../fonts/gravity-Light.otf');
+}
+
+@font-face {
+    font-family: gravity_regular;
+    src: url('../fonts/gravity-Regular.otf');
+}
+
+html {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #1f1f1f;
+    color: white;
+    font-family: gravity_light;
+    margin: 0;
+    font-size: 1em;
+}
+
+p {
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin: 0px;
+}
+
+header a{
+    color: #E5BB8F;
+}
+
+header {
+    position: relative;
+    width: auto;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    background-color: #181818;
+}
+
+#titres {
+    width: auto;
+    display: inline-block;
+}
+
+#first {
+    font-family: quantify, Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    width: auto;
+    display: inline;
+}
+
+#second {
+    font-size: 1.2em;
+    width: auto;
+    display: inline;
+    position: relative;
+    bottom: 5px;
+    padding-left: 10px;
+}
+
+#admin {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+
+.article_title {
+    font-family: quantify;
+    text-transform: uppercase;
+}
+
+
+.article_title::before {
+    content: ">>>";
+    margin-right: 5px;
+}
+
+.article_title::after {
+    content: "#";
+    font-size: 0.7em;
+    position: absolute;
+    right: 2.5%;
+}
+
+.article_content {
+    text-align: justify;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-left: 15px;
+}
+
+.article_link a {
+    font-family: gravity_regular;
+    font-style: italic;
+    color: grey;
+}
+
+.article_link {
+    margin-top: 10px;
+}
+
+.article {
+    padding-right: 3.5%;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.article_last {
+    margin-bottom: 10px;
+    position: relative;
+    padding-right: 50px;
+}
+
+.line-separator {
+    width: 90%;
+    border: 1px solid pink;
+    margin-top: 10px;
+}
+
+#content {
+    display: flex;
+    padding-left: 15px;
+}
+
+#articles {
+    flex: 1;
+    padding-left: 15px;
+}
+
+#categories {
+    position: relative;
+    width: auto;
+    margin-right: 2%;
+}
+
+.categorie {
+    display: inline-block;
+    color: grey;
+    position: relative;
+    left: 10px;
+    font-style: italic;
+}
+
+.infos {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    background-color: #272727;
+    margin: 0px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+}
+
+nav ul li {
+    display: block;
+}
