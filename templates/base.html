@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=2.0, shrink-to-fit=no, width='device-width'">
+    {% load static %}
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" />
+    <link rel='stylesheet' type="text/css" href='{% static "css/base.css" %}' />
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 900px)" href="{% static 'css/media.css' %}" />
+    {% block link %}{% endblock %} {# Permet de rajouter un fichier css en plus de celui de base #}
+    <title>{% block title %}BoyBoyBoy{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div id="titres">        
+            <h1 id="first"><a href="{% url 'accueil' %}">{% block h1 %}A BOY HAS NO NAME{% endblock %}</a></h1><br> <!-- Insérer lien vers l'accueil -->
+            <h2 id="second">...mais appelez moi Yoshinker</h2>
+        </div>
+        <p id='admin'><a href="{% url 'admin:index' %}">ADMIN</a></p>   
+    </header>
+
+    <div id="content">
+        <div id='articles'>
+            {% block content %}
+            <section class="content">
+                <p>Message par défaut<p>
+            </section>
+            {% endblock %}
+        </div>
+
+        <nav id="categories">
+            <h3>CATEGORIES</h3>
+            <ul>
+            {% for cat in categories %}
+                <li id="{{ cat.nom|lower }}"><a href="{% url 'categories' cat=cat.nom|lower %}">{{ cat.nom }}</a></li>
+            {% endfor %}
+            </ul>
+        </nav>
+    </div>
+
+    <footer>
+        <!-- Insérer lien --> 
+    </footer>
+</body>
+<!-- Blog développé à la main, par passion, en utilisant le framework Django -->
+</html>
