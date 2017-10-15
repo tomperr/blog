@@ -31,6 +31,8 @@ html {
     width: 100%;
     margin: 0px;
     padding: 0px;
+    font-size: 110%;
+
 }
 
 body {
@@ -38,7 +40,7 @@ body {
     color: white;
     font-family: gravity_light;
     margin: 0;
-    font-size: 1em;
+    font-size: 16px;
 }
 
 p {
@@ -47,20 +49,16 @@ p {
 
 a {
     text-decoration: none;
+    color: #E5BB8F;
 }
 
 h1, h2, h3 {
     margin: 0px;
 }
 
-header a{
-    color: #E5BB8F;
-}
-
 header {
     position: relative;
-    width: auto;
-    padding-left: 15px;
+    width: 100%;
     padding-top: 15px;
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -68,19 +66,20 @@ header {
 }
 
 #titres {
+    padding-left: 15px;
     width: auto;
     display: inline-block;
 }
 
 #first {
     font-family: quantify, Arial, Helvetica, sans-serif;
-    font-size: 3em;
+    font-size: 300%;
     width: auto;
     display: inline;
 }
 
 #second {
-    font-size: 1.2em;
+    font-size: 120%;
     width: auto;
     display: inline;
     position: relative;
@@ -108,9 +107,9 @@ header {
 
 .article_title::after {
     content: "#";
-    font-size: 0.7em;
+    font-size: 70%;
     position: absolute;
-    right: 2.5%;
+    right: 0%;
 }
 
 .article_content {
@@ -131,7 +130,6 @@ header {
 }
 
 .article {
-    padding-right: 3.5%;
     margin-bottom: 25px;
     position: relative;
 }
@@ -139,23 +137,24 @@ header {
 .article_last {
     margin-bottom: 10px;
     position: relative;
-    padding-right: 50px;
 }
 
 .line-separator {
     width: 90%;
-    border: 1px solid pink;
+    border: 1px solid #665C3D;
     margin-top: 10px;
 }
 
 #content {
     display: flex;
     padding-left: 15px;
+    padding-bottom: 15px;
 }
 
 #articles {
     flex: 1;
     padding-left: 15px;
+    padding-right: 15px;
 }
 
 #categories {
@@ -191,4 +190,14 @@ nav ul li a {
 
 nav ul li {
     display: block;
+}
+
+.hidden {
+    color: #424242;
+    font-size: 10%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
 }

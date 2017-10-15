@@ -8,6 +8,8 @@ cats = Categorie.objects.all()
 articles = Article.objects.all()
 
 def accueil(request):
+    cats = Categorie.objects.all()
+    articles = Article.objects.all()
     mes_arts = list(articles)
     mes_arts.reverse()
     if len(mes_arts) >= 1:
@@ -17,10 +19,14 @@ def accueil(request):
     return render(request, 'blog/accueil.html', {'derniers_articles': mes_arts, 'last': last, 'categories': list(cats)})
 
 def lire(request, id, slug):
+    cats = Categorie.objects.all()
+    articles = Article.objects.all()
     article = get_object_or_404(Article, id=id, slug=slug)
     return render(request, 'blog/lire.html', {'article': article, 'categories': cats})
 
 def categories(request, cat):
+    cats = Categorie.objects.all()
+    articles = Article.objects.all()
     mes_arts = list()
     for art in articles:
         if str(art.categorie.nom).lower() == cat:

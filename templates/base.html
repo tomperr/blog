@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=2.0, shrink-to-fit=no, width='device-width'">
+    <meta name="viewport" content="width=800" />
+    <meta name="viewport" content="initial-scale=1.0">
     {% load static %}
     <link rel="icon" href="{% static 'images/favicon.ico' %}" />
-    <link rel='stylesheet' type="text/css" href='{% static "css/base.css" %}' />
-    <link rel="stylesheet" type="text/css" media="screen and (max-width: 900px)" href="{% static 'css/media.css' %}" />
+    <link rel='stylesheet' type="text/css" href='{% static "css/base.css" %}' />
+    <link rel='stylesheet' type='text/css' media="(max-width: 600px)" href='{% static "css/mobile.css" %}' />
+    <link rel='stylesheet' type='text/css' media="(max-width: 370px)" href='{% static "css/tiny.css" %}' />
     {% block link %}{% endblock %} {# Permet de rajouter un fichier css en plus de celui de base #}
     <title>{% block title %}BoyBoyBoy{% endblock %}</title>
 </head>
+
+{% autoescape off %}
 <body>
     <header>
-        <div id="titres">        
+        <div id="titres">
             <h1 id="first"><a href="{% url 'accueil' %}">{% block h1 %}A BOY HAS NO NAME{% endblock %}</a></h1><br> <!-- Insérer lien vers l'accueil -->
-            <h2 id="second">...mais appelez moi Yoshinker</h2>
+            <h2 id="second">...mais appelez moi <a target="_blank" href="https://twitter.com/Yoshinker">Yoshinker</a></h2>
         </div>
-        <p id='admin'><a href="{% url 'admin:index' %}">ADMIN</a></p>   
+        <p id='admin'><a href="{% url 'admin:index' %}">ADMIN</a></p>
     </header>
 
     <div id="content">
@@ -36,10 +40,7 @@
             </ul>
         </nav>
     </div>
-
-    <footer>
-        <!-- Insérer lien --> 
-    </footer>
 </body>
+{% endautoescape %}
 <!-- Blog développé à la main, par passion, en utilisant le framework Django -->
 </html>

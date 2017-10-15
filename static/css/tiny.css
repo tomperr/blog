@@ -1,0 +1,19 @@
+header {
+    margin-bottom: 7px;
+}
+
+#first {
+    font-size: 160%;
+}
+
+#second {
+    font-size: 100%;
+}
+
+p {
+    font-size: 90%;
+}
+
+.article_last h2 {
+    line-height: 80%;
+}
