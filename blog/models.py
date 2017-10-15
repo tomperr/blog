@@ -21,4 +21,14 @@ class Article(models.Model):
     slug = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.titre
+        return self.
+        
+class SpeedPost(models.Model):
+
+    contenu = models.TextField(max_length=200)
+    parution = models.DateField(auto_now=False, auto_now_add=True)
+    photo = models.ImageField(upload_to=generate_filename, blank=True, null=True)
+
+
+    def __str__(self):
+        return self.contenu
