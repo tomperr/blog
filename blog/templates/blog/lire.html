@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div id='articles'>
     <div class="article_last">
         <h2>{{ article.titre }} {# <span class="categorie">dans < {{ article.categorie }} ></span> #}</h2>
         <div class="infos"><p>Écrit le <span class="time">{{ article.parution|date:"DATE_FORMAT"}}</span>,
             modifié pour la dernière fois le <span class="time">{{ article.last_modif|date:"DATE_FORMAT"}}</span></p></div>
         <div class="article_content">{{ article.contenu|linebreaksbr }}</div>
     </div>
+</div>
 {% endblock %}

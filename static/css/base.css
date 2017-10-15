@@ -160,8 +160,13 @@ header {
 #categories {
     position: relative;
     width: auto;
-    margin-right: 2%;
+    margin-bottom: 15px;
 }
+
+aside {
+    padding-right: 2%;
+}
+
 
 .categorie {
     display: inline-block;
@@ -200,4 +205,28 @@ nav ul li {
 footer {
     position: absolute;
     bottom: 0;
+}
+
+#speedposts {
+    flex: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-flow: row wrap;
+    display: flex;
+}
+
+.speedpost {
+    width: auto;
+    height: auto;
+    flex-basis: 50%;
+    margin-bottom: 30px;
+}
+
+.post_date {
+    font-weight: bold;
+}
+
+img {
+    height: auto;
+    width: auto;
 }

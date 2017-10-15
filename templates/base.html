@@ -23,22 +23,31 @@
     </header>
 
     <div id="content">
-        <div id='articles'>
-            {% block content %}
-            <section class="content">
-                <p>Message par défaut<p>
-            </section>
-            {% endblock %}
-        </div>
+    {% block content %}
+        <section class="content">
+            <p>Message par défaut<p>
+        </section>
+    {% endblock %}
 
-        <nav id="categories">
-            <h3>CATEGORIES</h3>
-            <ul>
-            {% for cat in categories %}
-                <li id="{{ cat.nom|lower }}"><a href="{% url 'categories' cat=cat.nom|lower %}">{{ cat.nom }}</a></li>
-            {% endfor %}
-            </ul>
-        </nav>
+        <aside>
+        {% block categories %}
+            <nav id="categories">
+                <h3>CATEGORIES</h3>
+                <ul>
+                {% for cat in categories %}
+                    <li id="{{ cat.nom|lower }}"><a href="{% url 'categories' cat=cat.nom|lower %}">{{ cat.nom }}</a></li>
+                {% endfor %}
+                </ul>
+            </nav>
+        {% endblock %}
+
+            <nav id="menu">
+                <h3>MENU</h3>
+                <ul>
+                    <li id="speedpost_menu"><a href="{% url 'speedpost' %}">Speedpost</a></li> 
+                </ul>
+            </nav>
+        </aside>
     </div>
 </body>
 {% endautoescape %}

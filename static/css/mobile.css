@@ -53,8 +53,9 @@ p {
     margin-top: 8px;
 }
 
-#categories {
-    margin-right: 8px;
+aside {
+    padding-right: 8px;
+    margin-top: 5px;
 }
 
 h2 {
@@ -76,3 +77,13 @@ h3 {
     font-size: 80%;
 }
 
+.speedpost {
+    width: auto;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}

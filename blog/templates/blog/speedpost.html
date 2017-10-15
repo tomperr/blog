@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div id='speedposts'>
+{% for post in posts %}
+    <div class="speedpost">
+        <p class="post_date">{{post.parution}}</p>
+        <p class="post_contenu">{{post.contenu|linebreaksbr}}</p>
+        <div class="post-separator"></div>
+    </div>
+{% empty %}
+    <p>Aucun post.</p>
+{% endfor %}
+</div>
+{% endblock %}
+
+{% block categories %}{% endblock %}

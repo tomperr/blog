@@ -4,14 +4,16 @@
 {# {% block link %}<link rel='stylesheet' type="text/css" href='{% static "blog/css/text.css" %}'>{% endblock %} #}
 
 {% block content %}
-{% for article in derniers_articles %}
-    <div class="article{% if article == last %}_last{% endif %}">
-        <h3 class="article_title">{{ article.titre }}</h3>
-        <p class="article_content">{{ article.contenu|truncatewords:150 }}</p>
-        <p class="article_link"><a href="{% url 'lire' id=article.id slug=article.slug %}">Lire l'article en entier</a></p>
-        <div class='line-separator'></div>
+    <div id='articles'>
+    {% for article in derniers_articles %}
+        <div class="article{% if article == last %}_last{% endif %}">
+            <h3 class="article_title">{{ article.titre }}</h3>
+            <p class="article_content">{{ article.contenu|truncatewords:150 }}</p>
+            <p class="article_link"><a href="{% url 'lire' id=article.id slug=article.slug %}">Lire l'article en entier</a></p>
+            <div class='line-separator'></div>
+        </div>
+    {% empty %}
+        <p>Aucun article.</p>
+    {% endfor %}
     </div>
-{% empty %}
-    <p>Aucun article.<p>
-{% endfor %}
 {% endblock %}
