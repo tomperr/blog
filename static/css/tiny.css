@@ -17,3 +17,7 @@ p {
 .article_last h2 {
     line-height: 80%;
 }
+
+.speedpost {
+    margin-right: 0;
+}

@@ -23,7 +23,7 @@ class Article(models.Model):
 
     def __str__(self):
         return self.titre
-        
+
 def path_and_rename(instance, filename):
     upload_to = 'speedpost/images'
     ext = filename.split('.')[-1]
@@ -34,7 +34,7 @@ def path_and_rename(instance, filename):
 class SpeedPost(models.Model):
 
     contenu = models.TextField(max_length=200)
-    parution = models.DateField(auto_now=False, auto_now_add=True)
+    parution = models.DateTimeField(auto_now=False, auto_now_add=True)
     photo = models.ImageField(upload_to=path_and_rename, blank=True, null=True)
 
     def __str__(self):

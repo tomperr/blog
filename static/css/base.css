@@ -218,12 +218,17 @@ footer {
 .speedpost {
     width: auto;
     height: auto;
-    flex-basis: 50%;
+    flex-basis: 45%;
     margin-bottom: 30px;
+    margin-right: 5%;
 }
 
 .post_date {
     font-weight: bold;
+}
+
+.post_contenu {
+    text-align: justify;
 }
 
 img {
