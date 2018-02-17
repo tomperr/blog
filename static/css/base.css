@@ -32,7 +32,6 @@ html {
     margin: 0px;
     padding: 0px;
     font-size: 110%;
-
 }
 
 body {
@@ -235,3 +234,33 @@ img {
     height: auto;
     width: auto;
 }
+
+.youtube {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+iframe {
+    text-align: center;
+
+}
+
+#mes_liens {
+    flex: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-flow: row wrap;
+    display: flex;
+}
+
+.lien {
+    width: auto;
+    height: auto;
+    flex-basis: 45%;
+    margin-bottom: 30px;
+    margin-right: 5%;
+}
+
+
+

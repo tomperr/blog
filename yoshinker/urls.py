@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.conf import settings
 from django.contrib import admin
+from django.http import HttpResponse
 
 urlpatterns = [
     url(r'', include('blog.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^robots.txt', lambda x: HttpResponse("User-Agent: *\nDisallow:", content_type="text/plain"), name="robots_file")
 ]

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{# {% block link %}<link rel='stylesheet' type="text/css" href='{% static "blog/css/text.css" %}'>{% endblock %} #}
+
+{% block content %}
+    <div id='mes_liens'>
+    {% for lien in mes_liens %}
+        <div class="lien">
+            <p class="nom_lien"><a class="lienHttp" href="{{ lien.lienHttp }}" target="_blank">{{ lien.nom_lien }}</a></p>
+        </div>
+    {% empty %}
+        <p>Aucun lien.</p>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block categories %}{% endblock %}

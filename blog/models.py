@@ -39,3 +39,11 @@ class SpeedPost(models.Model):
 
     def __str__(self):
         return self.contenu
+
+class Lien(models.Model):
+
+    nom_lien = models.TextField(max_length=None)
+    lienHttp = models.TextField(max_length=None)
+
+    def __str__(self):
+        return self.nom_lien

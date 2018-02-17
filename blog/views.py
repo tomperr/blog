@@ -1,6 +1,5 @@
-from django.http import HttpResponse, Http404
-from django.shortcuts import render, redirect, get_object_or_404
-from blog.models import Article, Categorie, SpeedPost
+from django.shortcuts import render, get_object_or_404
+from blog.models import Article, Categorie, SpeedPost, Lien
 
 # Create your views here.
 
@@ -20,7 +19,7 @@ def accueil(request):
 
 def lire(request, id, slug):
     cats = Categorie.objects.all()
-    articles = Article.objects.all()
+    # articles = Article.objects.all()
     article = get_object_or_404(Article, id=id, slug=slug)
     return render(request, 'blog/lire.html', {'article': article, 'categories': cats})
 
@@ -43,3 +42,9 @@ def speedpost(request):
     mes_posts = list(posts)
     mes_posts.reverse()
     return render(request, 'blog/speedpost.html', {'posts': mes_posts})
+
+def liens(request):
+    liens = Lien.objects.all()
+    mes_liens = list(liens)
+    mes_liens.reverse()
+    return render(request, 'blog/liens.html', {'mes_liens': mes_liens})

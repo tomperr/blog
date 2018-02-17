@@ -92,3 +92,14 @@ img {
     width: 100%;
     height: auto;
 }
+
+.lien {
+    width: auto;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    margin-right: 0;
+}
+
+#mes_liens {
+    padding-left: 0px;
+}

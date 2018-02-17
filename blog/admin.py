@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(Categorie)
 admin.site.register(Article)
 admin.site.register(SpeedPost)
+admin.site.register(Lien)
