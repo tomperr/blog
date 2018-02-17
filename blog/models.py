@@ -2,7 +2,7 @@ from django.db import models
 from fonctions import *
 import os
 
-# Create your models here.
+# Create your models here
 
 class Categorie(models.Model):
 
