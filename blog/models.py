@@ -1,4 +1,5 @@
 from django.db import models
+from fonctions import *
 import os
 
 # Create your models here.
@@ -23,13 +24,6 @@ class Article(models.Model):
 
     def __str__(self):
         return self.titre
-
-def path_and_rename(instance, filename):
-    upload_to = 'speedpost/images'
-    ext = filename.split('.')[-1]
-    nb = len(SpeedPost.objects.all())+1
-    filename = "{}.{}".format(nb, ext)
-    return os.path.join(upload_to, filename)
 
 class SpeedPost(models.Model):
 
