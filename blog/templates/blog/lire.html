@@ -3,10 +3,30 @@
 {% block content %}
 <div id='articles'>
     <div class="article_last">
-        <h2>{{ article.titre }} {# <span class="categorie">dans < {{ article.categorie }} ></span> #}</h2>
+        <h2>{{ article.titre|upper }}{#<span class="categorie">dans {{ article.categorie }} </span>#}</h2>
         <div class="infos"><p>Écrit le <span class="time">{{ article.parution|date:"DATE_FORMAT"}}</span>,
             modifié pour la dernière fois le <span class="time">{{ article.last_modif|date:"DATE_FORMAT"}}</span></p></div>
-        <div class="article_content">{{ article.contenu|linebreaksbr }}</div>
+        <div class="article_content"><p>>{{ article.contenu|linebreaksbr }}</p></div>
+        {% if is_plus_moins %}
+        <div id="plus_moins">
+            <div id="les_plus">
+                <h3 id="les_plus_titre">Les <span class="vert">+</span> :</h3>
+                <ul id="les_plus_list">
+                {% for elt in plus %}
+                    <li class="plus">{{ elt }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div id="les_moins">
+                <h3 id="les_moins_titre">Les <span class="rouge">-</span> :</h3>
+                <ul id="les_moins_list">
+                {% for elt in moins %}
+                    <li class="moins">{{ elt }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

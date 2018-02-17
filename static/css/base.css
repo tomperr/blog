@@ -116,6 +116,8 @@ header {
     margin-top: 10px;
     margin-bottom: 0px;
     padding-left: 15px;
+    padding-right: 15px;
+    font-family: gravity_book;
 }
 
 .article_link a {
@@ -153,7 +155,7 @@ header {
 #articles {
     flex: 1;
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 30px;
 }
 
 #categories {
@@ -260,6 +262,71 @@ iframe {
     flex-basis: 45%;
     margin-bottom: 30px;
     margin-right: 5%;
+}
+
+/* LES + | LES - */
+
+#plus_moins {
+    margin-top: 20px;
+    flex: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-flow: row wrap;
+    display: flex;
+}
+
+#les_plus, #les_moins {
+    width: auto;
+    height: auto;
+    flex-basis: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+#les_plus_titre, #les_moins_titre {
+    margin-bottom: 3px;
+}
+
+#les_plus_list, #les_moins_list {
+    list-style-type: none;
+}
+
+#les_plus_list li:before {
+    content: "•"; 
+    padding-right: 8px;
+    color: #0f5f0f; 
+}
+
+#les_moins_list li:before {
+    content: "•"; 
+    padding-right: 8px;
+    color: #740c0c; 
+}
+
+/* Personnalisation du contenu */
+
+.italic {
+    font-style: italic;
+}
+
+.gras {
+    font-weight: bold;
+}
+
+.souligne {
+    text-decoration: underline;
+}
+
+.raye {
+    text-decoration: line-through;
+}
+
+.vert {
+    color: #0f5f0f;
+}
+
+.rouge {
+    color: #740c0c; 
 }
 
 

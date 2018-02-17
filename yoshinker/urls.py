@@ -19,6 +19,6 @@ from django.http import HttpResponse
 
 urlpatterns = [
     url(r'', include('blog.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^robots.txt', lambda x: HttpResponse("User-Agent: *\nDisallow:", content_type="text/plain"), name="robots_file")
 ]

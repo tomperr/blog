@@ -24,13 +24,13 @@ p {
 
 #content {
     flex-direction: column;
-    padding-left: 8px;
-    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #articles {
     padding-left: 0;
-    padding-right: 8px;
+    padding-right: 0;
 }
 
 .article {
@@ -38,7 +38,8 @@ p {
 }
 
 .article_content {
-    padding-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .article_last {
@@ -54,7 +55,8 @@ p {
 }
 
 aside {
-    padding-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-top: 5px;
 }
 
@@ -74,7 +76,7 @@ h3 {
 
 .infos {
     margin-bottom: 12px;
-    font-size: 80%;
+    font-size: 90%;
 }
 
 .speedpost {
@@ -103,3 +105,17 @@ img {
 #mes_liens {
     padding-left: 0px;
 }
+
+#plus_moins {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#les_plus, #les_moins {
+    width: auto;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin-left: 0;
+}
+

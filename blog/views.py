@@ -21,7 +21,22 @@ def lire(request, id, slug):
     cats = Categorie.objects.all()
     # articles = Article.objects.all()
     article = get_object_or_404(Article, id=id, slug=slug)
-    return render(request, 'blog/lire.html', {'article': article, 'categories': cats})
+
+    to_return = {'article': article, 'categories': cats}
+
+    if str(article.categorie) == "Jeux vidéos":
+        mes_plus = str(article.les_plus).split("\n")
+        to_return["plus"] = mes_plus
+
+        mes_moins = str(article.les_moins).split("\n")
+        to_return["moins"] = mes_moins
+
+        to_return["is_plus_moins"] = True
+
+    else:
+        to_return["is_plus_moins"] = False
+
+    return render(request, 'blog/lire.html', to_return)
 
 def categories(request, cat):
     cats = Categorie.objects.all()

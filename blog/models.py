@@ -1,6 +1,14 @@
 from django.db import models
-from fonctions import *
 import os
+
+# Fonctions for models
+
+def path_and_rename(instance, filename):
+    upload_to = 'speedpost/images'
+    ext = filename.split('.')[-1]
+    nb = len(SpeedPost.objects.all())+1
+    filename = "{}.{}".format(nb, ext)
+    return os.path.join(upload_to, filename)
 
 # Create your models here
 
@@ -19,8 +27,13 @@ class Article(models.Model):
     parution = models.DateField(auto_now=False, auto_now_add=True)
     last_modif = models.DateField(auto_now=True, auto_now_add=False)
 
-    categorie = models.ForeignKey('Categorie')
+    categorie = models.ForeignKey('Categorie', on_delete=models.CASCADE)
     slug = models.CharField(max_length=30)
+
+    # JEUX VIDEOS
+
+    les_plus = models.TextField(max_length=None, blank=True)
+    les_moins = models.TextField(max_length=None, blank=True)
 
     def __str__(self):
         return self.titre

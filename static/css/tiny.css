@@ -2,6 +2,12 @@ header {
     margin-bottom: 7px;
 }
 
+#content {
+    padding-top: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 #first {
     font-size: 160%;
 }
@@ -10,7 +16,7 @@ header {
     font-size: 100%;
 }
 
-p {
+p, li{
     font-size: 90%;
 }
 
@@ -20,4 +26,9 @@ p {
 
 .speedpost, .lien {
     margin-right: 0;
+}
+
+#plus_moins {
+    margin-left: 0px;
+    margin-right: 0px;
 }
