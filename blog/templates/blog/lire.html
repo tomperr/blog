@@ -6,7 +6,7 @@
         <h2>{{ article.titre|upper }}{#<span class="categorie">dans {{ article.categorie }} </span>#}</h2>
         <div class="infos"><p>Écrit le <span class="time">{{ article.parution|date:"DATE_FORMAT"}}</span>,
             modifié pour la dernière fois le <span class="time">{{ article.last_modif|date:"DATE_FORMAT"}}</span></p></div>
-        <div class="article_content"><p>>{{ article.contenu|linebreaksbr }}</p></div>
+        <div class="article_content"><p>{{ article.contenu|linebreaksbr }}</p></div>
         {% if is_plus_moins %}
         <div id="plus_moins">
             <div id="les_plus">

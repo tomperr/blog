@@ -24,6 +24,8 @@ class Article(models.Model):
     titre = models.CharField(max_length=100)
     contenu = models.TextField(max_length=None)
 
+    preview = models.TextField(max_length=200)
+
     parution = models.DateField(auto_now=False, auto_now_add=True)
     last_modif = models.DateField(auto_now=True, auto_now_add=False)
 
