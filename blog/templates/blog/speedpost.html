@@ -10,10 +10,21 @@
         <p class="post_contenu">{{post.contenu|linebreaksbr}}</p>
         <div class="post-separator"></div>
     </div>
-{% empty %}
+    {% empty %}
     <p>Aucun post.</p>
-{% endfor %}
+    {% endfor %}
+    {% if isNav %}
+    <nav id="nav_speedpost">
+        {% if avant %}
+        <div id="speedpost_before"><a href="{% url 'speedpost' page=page_prec %}">Précédent</a></div>
+        {% endif %}
+        {% if suite %}
+        <div id="speedpost_after"><a href="{% url 'speedpost' page=page_suiv %}">Suivant</a></div>
+        {% endif %}
+    </nav>
+    {% endif %}
 </div>
+
 {% endblock %}
 
 {% block categories %}{% endblock %}

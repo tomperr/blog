@@ -4,7 +4,7 @@ import os
 # Fonctions for models
 
 def path_and_rename(instance, filename):
-    upload_to = 'speedpost/images'
+    # upload_to = 'speedpost/images'
     ext = filename.split('.')[-1]
     nb = len(SpeedPost.objects.all())+1
     filename = "{}.{}".format(nb, ext)
@@ -20,6 +20,8 @@ class Categorie(models.Model):
         return self.nom
 
 class Article(models.Model):
+
+    upload_to = "articles/images"
 
     titre = models.CharField(max_length=100)
     contenu = models.TextField(max_length=None)
@@ -40,6 +42,11 @@ class Article(models.Model):
     def __str__(self):
         return self.titre
 
+    def path_and_rename(self, filename):
+        upload_to = 'articles/images'
+        mon_image = Image(filename, upload_to)
+        return mon_image.path        
+
 class SpeedPost(models.Model):
 
     contenu = models.TextField(max_length=200)
@@ -48,6 +55,11 @@ class SpeedPost(models.Model):
 
     def __str__(self):
         return self.contenu
+    
+    def path_and_rename(self, filename):
+        upload_to = 'speedpost/images'
+        mon_image = Image(filename, upload_to)
+        return mon_image.path
 
 class Lien(models.Model):
 
@@ -56,3 +68,24 @@ class Lien(models.Model):
 
     def __str__(self):
         return self.nom_lien
+
+class Image:
+
+    mes_images = []
+
+    def __init__(self, filename, location):
+
+        self.nb = len(Image.mes_images)+1
+        self.ext = filename.split('.')[1]
+        self.filename = "{}.{}".format(nb, ext)
+
+        self.folder = location
+        self.path = os.path.join(self.folder, self.filename)
+
+        Image.mes_images.append(self)
+
+    def __repr__(self):
+        return self.path
+
+    def __del__(self):
+        pass

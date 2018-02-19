@@ -13,6 +13,13 @@ class ArticleAdmin(admin.ModelAdmin):
     class Media:
         js = ('/static/admin/js/article_admin.js',)
 
+class SpeedPostAdmin(admin.ModelAdmin):
+
+    model = SpeedPost
+
+    class Media:
+        js = ('/static/admin/js/speedpost_admin.js',)
+
 # Register your models here.
 
 admin.site.register(Categorie)

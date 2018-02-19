@@ -208,6 +208,8 @@ footer {
     bottom: 0;
 }
 
+/* */
+
 #speedposts {
     flex: 1;
     padding-left: 15px;
@@ -231,6 +233,30 @@ footer {
 .post_contenu {
     text-align: justify;
 }
+
+#nav_speedpost {
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+#speedpost_before, #speedpost_after {
+    display: inline-block;
+    background-color: #272727;
+    margin: 0px;
+    padding: 10px;
+}
+
+#speedpost_before:hover, #speedpost_after:hover {
+    background-color: #4e4e4e;
+}
+
+#speedpost_before a, #speedpost_after a {
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+/* */
 
 img {
     height: auto;

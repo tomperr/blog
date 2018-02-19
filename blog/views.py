@@ -52,11 +52,34 @@ def categories(request, cat):
         last = False
     return render(request, 'blog/accueil.html', {'derniers_articles': mes_arts, 'last': last, 'categories': list(cats)})
 
-def speedpost(request):
+def speedpost(request, page):
+
     posts = SpeedPost.objects.all()
+    nb_page = int(page)
+    debut = (nb_page-1)*10
+    fin = nb_page*10
     mes_posts = list(posts)
     mes_posts.reverse()
-    return render(request, 'blog/speedpost.html', {'posts': mes_posts})
+    posts_a_afficher = []
+
+    avant = False
+    if nb_page > 1:
+        avant = True
+
+    suite = False
+    try:
+        for i in range(debut, fin):
+            posts_a_afficher.append(mes_posts[i])
+        if mes_posts[fin]:
+            suite = True
+    except:
+        pass
+    
+    isNav = False
+    if suite or avant:
+        isNav = True
+    
+    return render(request, 'blog/speedpost.html', {'posts': posts_a_afficher,"suite": suite, "avant": avant, "page_prec": nb_page-1, "page_suiv": nb_page+1, "isNav": isNav})
 
 def liens(request):
     liens = Lien.objects.all()
