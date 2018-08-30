@@ -10,14 +10,14 @@
     <link rel='stylesheet' type='text/css' media="(max-width: 750px)" href='{% static "css/mobile.css" %}' />
     <link rel='stylesheet' type='text/css' media="(max-width: 370px)" href='{% static "css/tiny.css" %}' />
     {% block link %}{% endblock %} {# Permet de rajouter un fichier css en plus de celui de base #}
-    <title>{% block title %}BoyBoyBoy{% endblock %}</title>
+    <title>{% block title %}Random 42 Stud{% endblock %}</title>
 </head>
 
 {% autoescape off %}
 <body>
     <header>
         <div id="titres">
-            <h1 id="first"><a href="{% url 'accueil' %}">{% block h1 %}A BOY HAS NO NAME{% endblock %}</a></h1><br> <!-- Insérer lien vers l'accueil -->
+            <h1 id="first"><a href="{% url 'accueil' %}">{% block h1 %}RANDOM 42 STUD{% endblock %}</a></h1><br> <!-- Insérer lien vers l'accueil -->
             <h2 id="second">...mais appelez moi <a target="_blank" href="https://twitter.com/Yoshinker">Yoshinker</a></h2>
         </div>
         <p id='admin'><a href="{% url 'admin:index' %}">ADMIN</a></p>
